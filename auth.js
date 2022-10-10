@@ -2,9 +2,9 @@
  * @Author: ATSLotus/时桐
  * @Date: 2022-09-02 19:20:57
  * @LastEditors: ATSLotus/时桐
- * @LastEditTime: 2022-10-10 08:45:39
+ * @LastEditTime: 2022-10-10 09:14:06
  * @Description: 
- * @FilePath: /agc/src/assets/js/auth.js
+ * @FilePath: /AGCModule/auth.js
  */
 import { context } from "@/assets/js/connectConfig";
 
@@ -220,8 +220,8 @@ export function logout(func){
  */
 export function resetPasswordByPhone(countryCode, phoneNumber, newPassword, verifyCode) {
     return agconnect.auth().resetPasswordByPhone(countryCode, phoneNumber, newPassword, verifyCode).then(ret => {
-        return { res: 1, ret }
+        return { res: 1, data: ret }
     }).catch(e => {
-        return { res: 0, e }
+        return { res: 0, data: e }
     })
 }
